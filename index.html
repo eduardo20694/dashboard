@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+
+    <div class="dashboard">
+        
+        <div class="sidebar">
+            <h2>Bem-vindo de volta! <br> Sr. Eduardo </h2>
+            <ul>
+                <li onclick="showSection('section1')">🌐 SITES</li>
+                <li onclick="showSection('section2')">🤖 ROBÔS</li>
+                <li onclick="showSection('section5')">🏠 HOME</li>
+            </ul>
+        </div>
+       
+        <div class="content">
+            <div id="section1" class="section active">
+                <h2>SITES</h2>
+                <button class="add-site-button" onclick="openModal('site')">Adicionar Site</button>
+                <div class="cards" id="siteCardsSection1">
+                    
+                </div>
+            </div>
+
+            <div id="section2" class="section">
+                <h2>ROBÔS</h2>
+                <button class="add-site-button" onclick="openModalRobo()">Adicionar Robô</button>
+                <div class="cards" id="roboCardsSection2">
+                    
+                </div>
+            </div>
+
+            
+            <div id="section5" class="section">
+              <h2>HOME</h2>
+              <div class="summary-cards">
+                <div class="summary-card">
+                  <h3>Sites Adicionados</h3>
+                  <p id="siteCount">0</p>
+                </div>
+                <div class="summary-card">
+                  <h3>Robôs Adicionados</h3>
+                  <p id="roboCount">0</p>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addSiteModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Adicionar site</h3>
+            <label for="siteName">Nome:</label>
+            <input type="text" id="siteName" placeholder="Digite o nome" />
+            <label for="siteLink">Link:</label>
+            <input type="text" id="siteLink" placeholder="Digite o link" />
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="Digite a senha" />
+            <button onclick="addSite()">Adicionar</button>
+            <button onclick="closeModal()">Cancelar</button>
+        </div>
+    </div>
+
+    
+    <div id="deleteSiteModal" class="modal">
+        <div class="modal-content">
+            <h3>Você está prestes a excluir este site.</h3>
+            <label for="deleteAdminPassword">Digite a senha de administrador:</label>
+            <input type="password" id="deleteAdminPassword" placeholder="Digite a senha" />
+            <button onclick="deleteSite()">Excluir</button>
+            <button onclick="closeDeleteModal()">Cancelar</button>
+        </div>
+    </div>
+
+   
+    <div id="addRoboModal" class="modal">
+        <div class="modal-content">
+            <h3>Adicionando novo robô</h3>
+            <label for="roboName">Nome do Robô:</label>
+            <input type="text" id="roboName" placeholder="Digite o nome do robô" />
+            <label for="roboPassword">Senha:</label>
+            <input type="password" id="roboPassword" placeholder="Digite a senha" />
+            <button onclick="addRobo()">Adicionar</button>
+            <button onclick="closeModalRobo()">Cancelar</button>
+        </div>
+    </div>
+
+    
+    <div id="deleteRoboModal" class="modal">
+        <div class="modal-content">
+            <h3>Você está prestes a excluir este robô.</h3>
+            <label for="deleteRoboPassword">Digite a senha de administrador:</label>
+            <input type="password" id="deleteRoboPassword" placeholder="Digite a senha" />
+            <button onclick="deleteRobo()">Excluir</button>
+            <button onclick="closeDeleteRoboModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
