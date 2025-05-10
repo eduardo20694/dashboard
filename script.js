@@ -2,7 +2,8 @@ let sitesSection1 = [];
 let sitesSection2 = [];
 let robosSection2 = [];
 
-const apiUrl = 'http://localhost:5000/validar-senha'; 
+const apiUrl = 'https://apidash-csqx.onrender.com/validar-senha';
+
 
 function showSection(sectionId) {
   document.querySelectorAll('.section').forEach(section => {
