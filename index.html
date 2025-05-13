@@ -15,15 +15,15 @@
         <div class="sidebar">
             <h2>Bem-vindo de volta! <br> Sr. Eduardo </h2>
             <ul>
-                <li onclick="showSection('section1')">🌐 SITES</li>
-                <li onclick="showSection('section2')">🤖 ROBÔS</li>
-                <li onclick="showSection('section5')">🏠 HOME</li>
+                <li onclick="showSection('section1'); markSelected(this)">🌐 SITES</li>
+                <li onclick="showSection('section2'); markSelected(this)">🤖 ROBÔS</li>
+                <li onclick="showSection('section5'); markSelected(this)">🏠 HOME</li>
             </ul>
+
         </div>
        
         <div class="content">
             <div id="section1" class="section active">
-                <h2>SITES</h2>
                 <button class="add-site-button" onclick="openModal('site')">Adicionar Site</button>
                 <div class="cards" id="siteCardsSection1">
                     
@@ -31,7 +31,6 @@
             </div>
 
             <div id="section2" class="section">
-                <h2>ROBÔS</h2>
                 <button class="add-site-button" onclick="openModalRobo()">Adicionar Robô</button>
                 <div class="cards" id="roboCardsSection2">
                     
@@ -40,7 +39,6 @@
 
             
             <div id="section5" class="section">
-              <h2>HOME</h2>
               <div class="summary-cards">
                 <div class="summary-card">
                   <h3>Sites Adicionados</h3>

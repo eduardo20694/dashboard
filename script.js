@@ -4,11 +4,12 @@ let robosSection2 = [];
 
 const apiUrl = 'https://apidash-csqx.onrender.com/validar-senha';
 
-
 function showSection(sectionId) {
+  // Remove a classe 'active' de todas as seções
   document.querySelectorAll('.section').forEach(section => {
     section.classList.remove('active');
   });
+  // Adiciona a classe 'active' à seção clicada
   document.getElementById(sectionId).classList.add('active');
 }
 
@@ -218,6 +219,17 @@ function updateRoboCount() {
   document.getElementById('roboCount').textContent = totalRobos;
 }
 
+// Função para exibir a seção ao carregar a página
 window.onload = function() {
-    showSection('section5');  
+  showSection('section5');  
 };
+
+function markSelected(element) {
+  // Remove a classe 'selected' de todos os itens
+  document.querySelectorAll('ul li').forEach(item => {
+    item.classList.remove('selected');
+  });
+  
+  // Adiciona a classe 'selected' ao item clicado
+  element.classList.add('selected');
+}

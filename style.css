@@ -7,18 +7,22 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
-  color: #333;
+  color: #010000;
   margin: 0;
   height: 100vh;
   overflow: hidden;
 }
 
+.h22 {
+  color: #007BFF;
+}
 .dashboard {
   display: flex;
   height: 100%;
   overflow: hidden;
 }
 
+/* Estilo base da sidebar */
 .sidebar {
   background-color: #000000;
   color: white;
@@ -26,29 +30,59 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Garante que os itens começam do topo */
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Título na sidebar */
 .sidebar h2 {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   color: #ecf0f1;
+  font-weight: bold;
+  text-align: center;
 }
 
+/* Lista sem pontos na sidebar */
 .sidebar ul {
   list-style-type: none;
+  padding: 0;
+  margin-top: 0; /* Remove margens acima */
 }
 
 .sidebar ul li {
   cursor: pointer;
-  padding: 10px;
-  transition: background-color 0.3s ease;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* Efeito de hover para os itens da lista */
 .sidebar ul li:hover {
-  background-color: #34495e;
+  background-color: #34495e; /* Cor de fundo mais escura */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo para item selecionado */
+.sidebar ul li.selected {
+  background-color: #34495e; /* Cor de fundo para o item selecionado */
+  transform: scale(1.05); /* Efeito de aumento */
+}
+
+
+/* Responsividade - Barra lateral ajustável */
+@media (max-width: 768px) {
+  .sidebar h2 {
+    font-size: 16px; /* Tamanho reduzido para telas menores */
+    margin-bottom: 10px;
+  }
+
+  .sidebar ul li {
+    padding: 8px 15px; /* Ajuste do padding para telas pequenas */
+  }
 }
 
 .content {
@@ -86,61 +120,135 @@ h2 {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
 .modal-content {
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transform: translateY(-50px);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
 }
 
 .modal h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
 }
 
 .modal input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.modal input:focus {
+  border-color: #3498db;
+  outline: none;
 }
 
 .modal button {
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   width: 100%;
-  margin-top: 5px;
-  border-radius: 5px;
+  margin-top: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .modal button:hover {
   background-color: #2980b9;
 }
 
+.modal button:active {
+  background-color: #1c6ea4;
+}
+
+/* Modal Close */
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal .close:hover {
+  color: #e74c3c;
+}
+
+
 /* Botão de adicionar site */
 .add-site-button {
   background-color: #2ecc71;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;  /* Um pouco mais de padding para melhorar a usabilidade */
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;  /* Bordas mais arredondadas para um design mais moderno */
   cursor: pointer;
   margin-bottom: 20px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 16px;  /* Tamanho de fonte legível */
+  font-weight: bold;  /* Deixar o texto mais visível */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover */
 .add-site-button:hover {
   background-color: #27ae60;
-  transform: scale(1.05);
+  transform: scale(1.05);  /* Aumenta o botão para dar um efeito visual */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave ao passar o mouse */
 }
+
+/* Foco para acessibilidade */
+.add-site-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3498db;  /* Sombra azul clara para foco */
+}
+
+/* Quando o botão estiver desabilitado */
+.add-site-button:disabled {
+  background-color: #95a5a6;  /* Cor mais clara */
+  cursor: not-allowed;  /* Muda o cursor para indicar que está desabilitado */
+  box-shadow: none;
+}
+
 
 /* Cards */
 .cards {
