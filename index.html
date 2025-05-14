@@ -11,95 +11,62 @@
    
 
     <div class="dashboard">
-        
         <div class="sidebar">
-            <h2>Bem-vindo de volta! <br> Sr. Eduardo </h2>
+            <h2>Bem-vindo de volta! <br> Sr. Eduardo</h2>
             <ul>
                 <li onclick="showSection('section1'); markSelected(this)">🌐 SITES</li>
                 <li onclick="showSection('section2'); markSelected(this)">🤖 ROBÔS</li>
                 <li onclick="showSection('section5'); markSelected(this)">🏠 HOME</li>
             </ul>
-
         </div>
-       
+
         <div class="content">
             <div id="section1" class="section active">
-                <button class="add-site-button" onclick="openModal('site')">Adicionar Site</button>
+                
                 <div class="cards" id="siteCardsSection1">
                     
+                    <div class="site-card">
+                        <h3>Site da Mavie</h3>
+                        <a href="https://dashboard-1pu0.onrender.com" target="_blank" rel="noopener noreferrer">Mavie</a>
+                    </div>
+                    <div class="site-card">
+                        <h3>Camera</h3>
+                        <a href="https://vendacamera.onrender.com" target="_blank" rel="noopener noreferrer">Venda Camera</a>
+                    </div>
+                     <div class="site-card">
+                        <h3>Sobre IA</h3>
+                        <a href="https://sobreia.onrender.com" target="_blank" rel="noopener noreferrer">IA</a>
+                    </div>
                 </div>
             </div>
 
             <div id="section2" class="section">
-                <button class="add-site-button" onclick="openModalRobo()">Adicionar Robô</button>
+                <!-- Removi o botão de adicionar -->
                 <div class="cards" id="roboCardsSection2">
-                    
+                    <!-- Exemplo de robo card fixo -->
+             <!--      <div class="site-card">
+                        <h3>Robô Alpha</h3>
+                        <p>Descrição do robô Alpha</p>
+                    </div>
+                    <div class="site-card">
+                        <h3>Robô Beta</h3>
+                        <p>Descrição do robô Beta</p>
+                    </div> -->
                 </div>
             </div>
 
-            
             <div id="section5" class="section">
-              <div class="summary-cards">
-                <div class="summary-card">
-                  <h3>Sites Adicionados</h3>
-                  <p id="siteCount">0</p>
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>Sites Adicionados</h3>
+                        <p>2</p> 
+                    </div>
+                    <div class="summary-card">
+                        <h3>Robôs Adicionados</h3>
+                        <p>2</p> 
+                    </div>
                 </div>
-                <div class="summary-card">
-                  <h3>Robôs Adicionados</h3>
-                  <p id="roboCount">0</p>
-                </div>
-              </div>
             </div>
-
-        </div>
-    </div>
-
-    <div id="addSiteModal" class="modal">
-        <div class="modal-content">
-            <h3 id="modalTitle">Adicionar site</h3>
-            <label for="siteName">Nome:</label>
-            <input type="text" id="siteName" placeholder="Digite o nome" />
-            <label for="siteLink">Link:</label>
-            <input type="text" id="siteLink" placeholder="Digite o link" />
-            <label for="password">Senha:</label>
-            <input type="password" id="password" placeholder="Digite a senha" />
-            <button onclick="addSite()">Adicionar</button>
-            <button onclick="closeModal()">Cancelar</button>
-        </div>
-    </div>
-
-    
-    <div id="deleteSiteModal" class="modal">
-        <div class="modal-content">
-            <h3>Você está prestes a excluir este site.</h3>
-            <label for="deleteAdminPassword">Digite a senha de administrador:</label>
-            <input type="password" id="deleteAdminPassword" placeholder="Digite a senha" />
-            <button onclick="deleteSite()">Excluir</button>
-            <button onclick="closeDeleteModal()">Cancelar</button>
-        </div>
-    </div>
-
-   
-    <div id="addRoboModal" class="modal">
-        <div class="modal-content">
-            <h3>Adicionando novo robô</h3>
-            <label for="roboName">Nome do Robô:</label>
-            <input type="text" id="roboName" placeholder="Digite o nome do robô" />
-            <label for="roboPassword">Senha:</label>
-            <input type="password" id="roboPassword" placeholder="Digite a senha" />
-            <button onclick="addRobo()">Adicionar</button>
-            <button onclick="closeModalRobo()">Cancelar</button>
-        </div>
-    </div>
-
-    
-    <div id="deleteRoboModal" class="modal">
-        <div class="modal-content">
-            <h3>Você está prestes a excluir este robô.</h3>
-            <label for="deleteRoboPassword">Digite a senha de administrador:</label>
-            <input type="password" id="deleteRoboPassword" placeholder="Digite a senha" />
-            <button onclick="deleteRobo()">Excluir</button>
-            <button onclick="closeDeleteRoboModal()">Cancelar</button>
         </div>
     </div>
 
