@@ -2,19 +2,7 @@ let sitesSection1 = [];
 let sitesSection2 = [];
 let robosSection2 = [];
 
-// Firebase Setup
-const firebaseConfig = {
-  apiKey: "AIzaSyAI-P662br4j_jw39bCQOcAE_DlIHz9tYk",
-  authDomain: "bancodedados-f8c80.firebaseapp.com",
-  projectId: "bancodedados-f8c80",
-  storageBucket: "bancodedados-f8c80.firebasestorage.app",
-  messagingSenderId: "53114778309",
-  appId: "1:53114778309:web:14714009d7a9f0c90436ac"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const apiUrl = 'https://apidash-csqx.onrender.com/validar-senha';
 
 function showSection(sectionId) {
   // Remove a classe 'active' de todas as seções
@@ -63,16 +51,16 @@ function closeDeleteRoboModal() {
 
 async function checkPassword(password) {
   try {
-    const response = await fetch('https://apidash-csqx.onrender.com/validar-senha', {
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ senha: password }),
+      body: JSON.stringify({ senha: password }), // Ajuste aqui para enviar 'senha'
     });
 
     const data = await response.json();
-    return data.autorizado === true;
+    return data.autorizado === true; // Verifica se o campo 'autorizado' é true
   } catch (error) {
     alert('Erro ao verificar a senha!');
     return false;
@@ -93,16 +81,13 @@ async function addSite() {
 
   if (siteName && siteLink) {
     const newSite = { name: siteName, link: siteLink };
-    let sectionId = 'siteCardsSection1';
-    if (document.getElementById('section2').classList.contains('active')) {
-      sitesSection2.push(newSite);
-      sectionId = 'siteCardsSection2';
-    } else {
+    if (document.getElementById('section1').classList.contains('active')) {
       sitesSection1.push(newSite);
+      updateSiteCards(sitesSection1, 'siteCardsSection1');
+    } else {
+      sitesSection2.push(newSite);
+      updateSiteCards(sitesSection2, 'siteCardsSection2');
     }
-    updateSiteCards(sitesSection1.concat(sitesSection2), sectionId);
-    // Salva o site no Firebase
-    db.collection("sites").add(newSite);
     updateSiteCount();
 
     document.getElementById('siteName').value = '';
@@ -130,8 +115,6 @@ async function addRobo() {
     const newRobo = { name: roboName };
     robosSection2.push(newRobo);
     updateRoboCards(robosSection2, 'roboCardsSection2');
-    // Salva o robô no Firebase
-    db.collection("robos").add(newRobo);
     updateRoboCount();
     closeModalRobo();
   } else {
@@ -151,20 +134,15 @@ async function deleteSite() {
 
   if (window.siteToDelete !== null) {
     const { index, section } = window.siteToDelete;
-    let siteId;
     if (section === 'siteCardsSection1') {
-      siteId = sitesSection1[index].id;
       sitesSection1.splice(index, 1);
-      updateSiteCards(sitesSection1.concat(sitesSection2), 'siteCardsSection1');
+      updateSiteCards(sitesSection1, 'siteCardsSection1');
     } else {
-      siteId = sitesSection2[index].id;
       sitesSection2.splice(index, 1);
-      updateSiteCards(sitesSection1.concat(sitesSection2), 'siteCardsSection2');
+      updateSiteCards(sitesSection2, 'siteCardsSection2');
     }
     updateSiteCount();
     closeDeleteModal();
-    // Exclui o site do Firebase
-    db.collection("sites").doc(siteId).delete();
   }
 }
 
@@ -180,13 +158,10 @@ async function deleteRobo() {
 
   if (window.roboToDelete !== null) {
     const { index } = window.roboToDelete;
-    const roboId = robosSection2[index].id;
     robosSection2.splice(index, 1);
     updateRoboCards(robosSection2, 'roboCardsSection2');
     updateRoboCount();
     closeDeleteRoboModal();
-    // Exclui o robô do Firebase
-    db.collection("robos").doc(roboId).delete();
   }
 }
 
@@ -255,7 +230,6 @@ function markSelected(element) {
     item.classList.remove('selected');
   });
   
-  // Marca o item como selecionado
+  // Adiciona a classe 'selected' ao item clicado
   element.classList.add('selected');
 }
-
