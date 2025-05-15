@@ -96,25 +96,45 @@ body {
 }
 
 .site-card {
-  background-color: white;
+  position: relative;
+  background-image: url('imagens/card.png'); /* Substitua pelo caminho da imagem desejada */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   padding: 40px;
   border-radius: 8px;
   width: 200px;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  color: white; /* Deixa o texto branco para melhor contraste */
+}
+
+.site-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* sombra por cima da imagem */
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.site-card * {
+  position: relative;
+  z-index: 1;
 }
 
 .site-card:hover {
   transform: scale(1.08);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .site-card a {
   display: block;
-  color: #8357da;
+  color: #ffd700; /* cor que combina com o fundo escuro */
   margin-top: 10px;
   text-decoration: none;
 }
@@ -123,7 +143,6 @@ body {
   text-decoration: underline;
 }
 
-/* Summary Cards */
 .summary-cards {
   display: flex;
   gap: 20px;
@@ -132,29 +151,81 @@ body {
   justify-content: center;
 }
 
+/* Estilo geral do card com fundo */
 .summary-card {
-  background-color: #f2f2f2;
+  position: relative;
+  color: white;
+  overflow: hidden;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 220px;
+  border-radius: 16px;
+  width: 250px;
+  height: 160px;
   text-align: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .summary-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 
+/* Camada escura sobre a imagem */
+.summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* sombra escura */
+  z-index: 0;
+  border-radius: 16px;
+  /* Removido o blur para deixar a imagem nítida */
+  /* backdrop-filter: blur(1px); */
+}
+
+
+/* Garante que o conteúdo fique acima da sombra */
+.summary-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Títulos e números */
 .summary-card h3 {
+  font-size: 18px;
   margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .summary-card p {
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
-  color: #2ecc71;
+  color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
+
+/* Fundo para "Sites Adicionados" */
+.card-sites {
+  background-image: url('imagens/card.png'); /* Verifique se o caminho está correto */
+}
+
+/* Fundo para "Robôs Adicionados" */
+.card-robos {
+  background-image: url('imagens/AI.jpg');
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .summary-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
 
 /* Responsividade */
 @media (max-width: 768px) {
