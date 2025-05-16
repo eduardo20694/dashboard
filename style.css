@@ -9,7 +9,7 @@ body {
   background-color: #f4f4f9;
   color: #010000;
   height: 100vh;
-  overflow: auto; /* permite scroll em mobile */
+  overflow: auto; 
 }
 
 .dashboard {
@@ -18,7 +18,6 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
   background: linear-gradient(270deg, #ff6a00, #ff758c, #a044ff, #ff6a00);
   background-size: 800% 800%;
@@ -67,7 +66,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Content */
 .content {
   flex: 1;
   padding: 20px;
@@ -86,7 +84,6 @@ body {
   display: block;
 }
 
-/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -97,7 +94,7 @@ body {
 
 .site-card {
   position: relative;
-  background-image: url('imagens/card.png'); /* Substitua pelo caminho da imagem desejada */
+  background-image: url('imagens/card.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -110,14 +107,14 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  color: white; /* Deixa o texto branco para melhor contraste */
+  color: white; 
 }
 
 .site-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* sombra por cima da imagem */
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 8px;
   z-index: 0;
 }
@@ -134,7 +131,7 @@ body {
 
 .site-card a {
   display: block;
-  color: #ffd700; /* cor que combina com o fundo escuro */
+  color: #ffd700; 
   margin-top: 10px;
   text-decoration: none;
 }
@@ -151,7 +148,6 @@ body {
   justify-content: center;
 }
 
-/* Estilo geral do card com fundo */
 .summary-card {
   position: relative;
   color: white;
@@ -173,26 +169,21 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* Camada escura sobre a imagem */
 .summary-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* sombra escura */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
   border-radius: 16px;
-  /* Removido o blur para deixar a imagem nítida */
-  /* backdrop-filter: blur(1px); */
 }
 
 
-/* Garante que o conteúdo fique acima da sombra */
 .summary-card * {
   position: relative;
   z-index: 1;
 }
 
-/* Títulos e números */
 .summary-card h3 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -207,17 +198,15 @@ body {
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Fundo para "Sites Adicionados" */
+
 .card-sites {
-  background-image: url('imagens/card.png'); /* Verifique se o caminho está correto */
+  background-image: url('imagens/card.png');
 }
 
-/* Fundo para "Robôs Adicionados" */
 .card-robos {
   background-image: url('imagens/AI.jpg');
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .summary-card {
     width: 100%;
@@ -227,7 +216,6 @@ body {
 
 
 
-/* Responsividade */
 @media (max-width: 768px) {
   .dashboard {
     flex-direction: column;
