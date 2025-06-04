@@ -19,13 +19,15 @@ body {
 }
 
 .sidebar {
-  background: linear-gradient(270deg, #ff6a00, #ff758c, #a044ff, #ff6a00);
-  background-size: 800% 800%;
+  background-image: url(imagens/sidebar.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   animation: sunsetBackground 16s ease infinite;
   color: white;
   padding: 20px;
   width: 250px;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(10, 10, 10, 0.1);
 }
 
 @keyframes sunsetBackground {
@@ -37,7 +39,7 @@ body {
 .sidebar h2 {
   font-size: 18px;
   margin-bottom: 100px;
-  color: #ecf0f1;
+  color: #f5f7f7;
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -62,7 +64,7 @@ body {
 
 .sidebar ul li:hover,
 .sidebar ul li.selected {
-  background-color: #96938c;
+  background-color: #060606;
   transform: scale(1.05);
 }
 
@@ -70,8 +72,8 @@ body {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background-image: url('imagens/arvore.jpg');
-  background-size: cover;
+  background-image: url('imagens/fundo2.png');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
