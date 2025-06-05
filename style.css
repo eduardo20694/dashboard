@@ -264,5 +264,14 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .content {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Garante altura mínima */
+  }
+}
+
 
 
