@@ -39,3 +39,27 @@ function atualizarResumo() {
 }
 
 window.addEventListener('DOMContentLoaded', atualizarResumo);
+
+function abrirPopupSobreMim() {
+  document.getElementById("popupSobreMim").style.display = "flex";
+}
+
+function fecharPopupSobreMim() {
+  document.getElementById("popupSobreMim").style.display = "none";
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("musicaIntro");
+
+  function tocarMusicaUmaVez() {
+    audio.play().catch((e) => {
+      console.log("Autoplay bloqueado, aguardando interação.");
+    });
+    window.removeEventListener("click", tocarMusicaUmaVez);
+    window.removeEventListener("touchstart", tocarMusicaUmaVez);
+  }
+
+  window.addEventListener("click", tocarMusicaUmaVez);
+  window.addEventListener("touchstart", tocarMusicaUmaVez);
+});
+
