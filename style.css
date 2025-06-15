@@ -326,3 +326,102 @@ body {
 }
 
 
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.9); /* fundo escuro com transparência */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#popupOverlay.active {
+  display: flex;
+}
+
+#popupBox {
+  background-color: #0f243d; /* azul escuro */
+  padding: 2rem;
+  border-radius: 15px;
+  color: #a1caff; /* azul claro */
+  max-width: 800px;  /* aumentei aqui */
+  width: 90%;       /* continua com 90% da tela */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.popupNav {
+  display: flex;
+  background-color: #16456a; /* um tom mais escuro de azul */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.popupNav button {
+  flex: 1;
+  padding: 14px;
+  background: #16456a;
+  color: #a1caff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.popupNav button.active,
+.popupNav button:hover {
+  background-color: #1ca7ff; /* azul vibrante */
+  color: #0f243d; /* texto escuro quando ativo */
+}
+
+#popupContent {
+  min-height: 150px;
+  text-align: left; /* Alinha o texto à esquerda */
+  color: #a1caff;
+  font-family: 'Consolas', 'Courier New', monospace; /* Fonte monoespaçada para código */
+  background-color: #09203a; /* Fundo escuro dentro do conteúdo */
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto; /* Scroll horizontal se necessário */
+  white-space: pre-wrap; /* Quebra linha mantendo espaçamento */
+  max-height: 400px; /* Limita altura do popup */
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#popupContent pre {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: inherit;
+  background: transparent;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #a1caff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+
+#closeBtn:hover {
+  color: #1ca7ff;
+}
