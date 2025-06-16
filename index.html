@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="dashboard">
         <div class="sidebar">
@@ -18,59 +20,84 @@
             </ul>
         </div>
 
-<div id="popupSobreMim" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-btn" onclick="fecharPopupSobreMim()">&times;</span>
-    <h2>Sobre Mim</h2>
-    <p><strong>Nome:</strong> Eduardo Rodrigues Sparremberger</p>
-    <p><strong>Email:</strong> eduardorodrigues1103@gmail.com</p>
-    <p><strong>WhatsApp:</strong> (51) 98344-7659</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/eduardo20694" target="_blank">github.com/eduardo20694</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/eduardosparremberger" target="_blank">Meu LinkedIn</a></p>
-    <p><strong>Resumo:</strong> Desenvolvedor Full Stack em formação, apaixonado por IA, automação e desenvolvimento web/mobile.</p>
-  </div>
-</div>
+        <div id="popupSobreMim" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-btn" onclick="fecharPopupSobreMim()">&times;</span>
+                <h2>Sobre Mim</h2>
+                <p><strong>Nome:</strong> Eduardo Rodrigues Sparremberger</p>
+                <p><strong>Email:</strong> eduardorodrigues1103@gmail.com</p>
+                <p><strong>WhatsApp:</strong> (51) 98344-7659</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/eduardo20694"
+                        target="_blank">github.com/eduardo20694</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/eduardosparremberger" target="_blank">Meu
+                        LinkedIn</a></p>
+                <p><strong>Resumo:</strong> Desenvolvedor Full Stack em formação, apaixonado por IA, automação e
+                    desenvolvimento web/mobile.</p>
+            </div>
+        </div>
 
         <div class="content">
             <div id="section1" class="section active">
-                
+
                 <div class="cards" id="siteCardsSection1">
-                    
+
                     <div class="site-card">
                         <h3>Camera</h3>
-                        <a href="https://vendacamera.onrender.com" target="_blank" rel="noopener noreferrer">Venda Camera</a>
+                        <a href="https://vendacamera.onrender.com" target="_blank" rel="noopener noreferrer">Venda
+                            Camera</a>
                     </div>
-                     <div class="site-card">
+                    <div class="site-card">
                         <h3>Pagina de Vendas</h3>
-                        <a href="https://marketing-digital-81cb.onrender.com" target="_blank" rel="noopener noreferrer">Marketing Digital</a>
+                        <a href="https://marketing-digital-81cb.onrender.com" target="_blank"
+                            rel="noopener noreferrer">Marketing Digital</a>
                     </div>
                     <div class="site-card">
                         <h3>E-commerce</h3>
-                        <a href="https://minhaloja.onrender.com" target="_blank" rel="noopener noreferrer">Meu E-commerce</a>
+                        <a href="https://minhaloja.onrender.com" target="_blank" rel="noopener noreferrer">Meu
+                            E-commerce</a>
                     </div>
                 </div>
             </div>
 
             <div id="section2" class="section">
-               
-                <div class="cards" id="roboCardsSection2">
-                    
-                    <div class="site-card">
-  <h3>Minha IA Online</h3>
-  <p id="openPopup" style="cursor:pointer; color:white; text-decoration:none;">Clique aqui para ver descrição da IA</p>
-</div>
 
-<div id="popupOverlay">
-  <div id="popupBox">
-    <button id="closeBtn">&times;</button>
-    <div class="popupNav">
-      <button id="btnDesc" class="active">IA</button>
-      <button id="btnDetalhes">API REST FULL</button>
-    </div>
-    <div id="popupContent">Conteúdo da descrição do robô Alpha</div>
-  </div>
-</div>
-                    
+                <div class="cards" id="roboCardsSection2">
+                    <!--ROBO1-->
+                    <div class="site-card">
+                        <h3>Minha IA Online</h3>
+                        <p id="openPopup" style="cursor:pointer; color:white; text-decoration:none;">Clique aqui para
+                            ver descrição da IA</p>
+                    </div>
+
+                    <div id="popupOverlay">
+                        <div id="popupBox">
+                            <button id="closeBtn">&times;</button>
+                            <div class="popupNav">
+                                <button id="btnDesc" class="active">IA</button>
+                                <button id="btnDetalhes">API REST FULL</button>
+                            </div>
+                            <div id="popupContent">Conteúdo da descrição do robô Alpha</div>
+                        </div>
+                    </div>
+
+                    <!--ROBO2-->
+                    <div class="site-card">
+                        <h3>Minha IA Online</h3>
+                        <p id="abrirPopupIaOnline" style="cursor:pointer; color:white; text-decoration:none;">
+                            Clique aqui para ver descrição da IA
+                        </p>
+                    </div>
+
+                    <div id="popupOverlayIaOnline">
+                        <div id="popupBoxIaOnline">
+                            <button id="fecharPopupIaOnline">&times;</button>
+                            <div class="popupNav">
+                                <button id="btnIaDesc" class="active">IA MYSQL</button>
+                            </div>
+                            <div id="popupContentIaOnline"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -78,12 +105,12 @@
                 <div class="summary-cards">
                     <div class="summary-card card-sites">
                         <h3>Sites Adicionados</h3>
-                        <p>2</p> 
+                        <p>2</p>
                     </div>
 
                     <div class="summary-card card-robos">
                         <h3>Robôs Adicionados</h3>
-                        <p>2</p> 
+                        <p>2</p>
                     </div>
                 </div>
             </div>
@@ -91,15 +118,9 @@
     </div>
     <audio id="musicaIntro" src="audio.mp3"></audio>
     <script src="script.js"></script>
+    <script src="robo1.js"></script>
+    <script src="robo2.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-

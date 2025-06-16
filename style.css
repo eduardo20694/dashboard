@@ -425,3 +425,103 @@ body {
 #closeBtn:hover {
   color: #1ca7ff;
 }
+
+#popupOverlayIaOnline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#popupOverlayIaOnline.active {
+  display: flex;
+}
+
+#popupBoxIaOnline {
+  background-color: #0f243d;
+  padding: 2rem;
+  border-radius: 15px;
+  color: #a1caff;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#popupBoxIaOnline .popupNav {
+  display: flex;
+  background-color: #16456a;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+#popupBoxIaOnline .popupNav button {
+  flex: 1;
+  padding: 14px;
+  background: #16456a;
+  color: #a1caff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#popupBoxIaOnline .popupNav button.active,
+#popupBoxIaOnline .popupNav button:hover {
+  background-color: #1ca7ff;
+  color: #0f243d;
+}
+
+#popupContentIaOnline {
+  min-height: 150px;
+  text-align: left;
+  color: #a1caff;
+  font-family: 'Consolas', 'Courier New', monospace;
+  background-color: #09203a;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  max-height: 400px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#popupContentIaOnline pre {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: inherit;
+  background: transparent;
+}
+
+#fecharPopupIaOnline {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #a1caff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+
+#fecharPopupIaOnline:hover {
+  color: #1ca7ff;
+}
