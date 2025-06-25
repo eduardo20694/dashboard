@@ -62,5 +62,3 @@ window.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("click", tocarMusicaUmaVez);
   window.addEventListener("touchstart", tocarMusicaUmaVez);
 });
-
-  
