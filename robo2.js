@@ -49,7 +49,7 @@ def carregar_dados():
     return list(ids), list(perguntas), list(respostas)
 
 def adicionar_pergunta_resposta(pergunta, resposta, categoria_id, tags=[]):
-    db = BancoDeDados("127.0.0.1", "root", "eduardo20694", "inteligencia_artificial")
+    db = BancoDeDados("1X7.X.X.X", "XXXX", "eduardoXXXX", "XXXXXXXXXXX")
     
     query = "INSERT INTO conhecimento (pergunta, resposta, categoria_id, ativo) VALUES (%s, %s, %s, TRUE)"
     db.execute_query(query, (pergunta, resposta, categoria_id))
