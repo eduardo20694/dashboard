@@ -526,33 +526,6 @@ body {
   color: #1ca7ff;
 }
 
-.summary-graph {
-    margin-top: 20px;
-    padding: 15px 20px;
-    background-color: #12233e;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-    color: #e1e9ff;
-    width: 320px; /* menor largura */
-    text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.summary-graph h3 {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #a3b1d1;
-}
-
-#graficoLinguagens {
-    width: 100% !important;
-    height: 180px !important; /* menor altura */
-    display: block;
-    border-radius: 8px;
-    background-color: #192f57;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
-}
 
 
 
